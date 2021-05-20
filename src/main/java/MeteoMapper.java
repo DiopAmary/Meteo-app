@@ -20,11 +20,11 @@ public class MeteoMapper  extends Mapper<LongWritable, Text, Text, MeteoWritable
             }
             //---------temperature extraction----------------------
             String temperatureValue = lineSplit[13].substring(0, 5);
-            char temperatureQuality = lineSplit[10].substring(6,7).charAt(0);
+            char temperatureQuality = lineSplit[13].substring(6,7).charAt(0);
             double temperature = 0;
             long mesureTemperatureCounter = 0;
             if (!temperatureValue.equals("+9999") && Character.isDigit(temperatureQuality) && Character.getNumericValue(temperatureQuality) < 5) {
-                temperature = Double.parseDouble(temperatureValue);
+                temperature = Double.parseDouble(temperatureValue)/10.0;
                 mesureTemperatureCounter = 1;
             }
 

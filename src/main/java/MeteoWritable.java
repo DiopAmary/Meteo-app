@@ -50,11 +50,11 @@ public class MeteoWritable implements Writable {
 
     @Override
     public String toString() {
-        return "MeteoWritable[" +
-                "Temp ( " + nombreMesureTemperature +
+        return "==>[" +
+                "Temperature ( " + nombreMesureTemperature +
                 " , " + temperatureMax +
                 " , " + temperatureMin +
-                " )\t( " + nombreMesureWind +
+                " )\t Wind speed( " + nombreMesureWind +
                 " , " + windMax +
                 " , " + windMin +
                 " , " + windMoyenne +
