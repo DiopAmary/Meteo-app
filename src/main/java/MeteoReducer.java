@@ -29,6 +29,7 @@ public class MeteoReducer extends Reducer<Text, MeteoWritable, Text, MeteoWritab
                     temperatureMax = meteoWritable.getTemperatureMax();
             }
         }
+        double moyenne = (double)Math.round(sumWind/mesureWindCounter*1000)/1000;
         MeteoWritable outputValue = new MeteoWritable(
                 mesureTemperatureCounter,
                 mesureWindCounter,
@@ -36,7 +37,7 @@ public class MeteoReducer extends Reducer<Text, MeteoWritable, Text, MeteoWritab
                 temperatureMin,
                 windMax,
                 windMin,
-                sumWind/mesureWindCounter
+                moyenne
         );
         context.write(key, outputValue);
     }

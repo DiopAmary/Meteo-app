@@ -16,7 +16,7 @@ public class MeteoDriver {
         Job job = Job.getInstance(conf, "Métèo data extration");
         job.setJarByClass(MeteoDriver.class);
         job.setMapperClass(MeteoMapper.class);
-        //job.setCombinerClass(MeteoCombiner.class);
+        job.setCombinerClass(MeteoCombiner.class);
         job.setReducerClass(MeteoReducer.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(MeteoWritable.class);

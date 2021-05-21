@@ -31,8 +31,8 @@ public class MeteoWritable implements Writable {
         nombreMesureWind = in.readLong();
         temperatureMax = in.readDouble();
         temperatureMin = in.readDouble();
-        windMin = in.readDouble();
         windMax = in.readDouble();
+        windMin = in.readDouble();
         windMoyenne = in.readDouble();
     }
 
