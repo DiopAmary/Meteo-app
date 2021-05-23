@@ -38,7 +38,9 @@ public class MeteoMapper  extends Mapper<LongWritable, Text, Text, MeteoWritable
                         wind,
                         wind
                 );
-                String output = lineSplit[1].substring(0, 7);
+
+                String name = lineSplit[6].split(",")[0];
+                String output = name + " [ lat = " + lineSplit[3] + ", lon = " + lineSplit[4] + " ]";
                 Text outputKey = new Text(output);
                 context.write(outputKey, outputValue);
             }
